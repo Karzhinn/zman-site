@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 780" role="img" aria-label="Placeholder screenshot 3">
+  <rect x="4" y="4" width="352" height="772" rx="28" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="3" stroke-dasharray="10 8"/>
+  <g transform="translate(148,300)" fill="none" stroke="#6366F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="64" height="64" rx="10"/>
+    <circle cx="20" cy="20" r="6"/>
+    <path d="M4 52 l18 -18 12 12 14 -16 12 14"/>
+  </g>
+  <text x="180" y="420" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" font-weight="700" fill="#4338CA" text-anchor="middle">Screenshot 3</text>
+  <text x="180" y="456" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#605E78" text-anchor="middle">&#1608;&#1746;&#1606;&#1749;&#1740; &#1685;&#1575;&#1587;&#1578;&#1749;&#1602;&#1740;&#1606;&#1749; &#1604;&#1742;&#1585;&#1749; &#1583;&#1575;&#1583;&#1749;&#1606;&#1585;&#1742;&#1578;</text>
+  <text x="180" y="486" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#605E78" text-anchor="middle">Replace with a real app screenshot</text>
+  <text x="180" y="516" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" fill="#9B99C0" text-anchor="middle">1080 x 2340 px (9:19.5)</text>
+</svg>
