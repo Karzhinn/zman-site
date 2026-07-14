@@ -10,8 +10,8 @@ Keep the same file name (or update the matching `src` in the HTML).
 | `logo-mark.png` | ✅ real | auto-cropped wordmark used in header/hero (regenerate if the logo changes) | tight crop, ~1000 px wide |
 | `logo-og.png` | ✅ real | social-share image (white bg). Optionally replace with a designed 1200×630 banner | 1200×630 px |
 | `favicon.svg` | PLACEHOLDER | a proper app-icon favicon (rounded square + logo) | SVG, or 32/180/512 px PNGs |
-| `phone-mockup.svg` | PLACEHOLDER | a real phone mockup with an actual app screenshot inside | ~900×1850 px PNG/WebP |
-| `screenshots/screenshot-1.svg` … `screenshot-4.svg` | PLACEHOLDER | real app screenshots (portrait) | 1080×2340 px PNG/WebP |
+| `phone-mockup.png` | ✅ real | device-framed home-screen mockup shown in the hero (transparent background) | 1530×3036 px PNG |
+| `screenshots/lesson1.png`, `lesson3.png`, `achievements.png`, `leaderboard.png` | ✅ real | real app screenshots shown in the carousel | 1290×2796 px PNG |
 | `badge-google-play.svg` | PLACEHOLDER | the **official** "Get it on Google Play" badge (required by Google's brand rules once live) | official asset |
 | `badge-app-store.svg` | PLACEHOLDER | the **official** "Download on the App Store" badge (required by Apple's brand rules once live) | official asset |
 
