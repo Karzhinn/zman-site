@@ -9,6 +9,7 @@ Bilingual (Sorani Kurdish ⇄ English) static website for **ZMAN**, the free Eng
 | File | URL | Purpose |
 |---|---|---|
 | `index.html` | `/zman-site/` | Landing page (hero, about, features, screenshots, download, contact) |
+| `guide.html` | `/zman-site/guide.html` | User guide — sign up, sign in (Google/Apple/email), password reset, username, sign out, account deletion, FAQ |
 | `privacy.html` | `/zman-site/privacy.html` | Privacy Policy (**DRAFT placeholders** — final text pending) |
 | `terms.html` | `/zman-site/terms.html` | Terms of Service (**DRAFT placeholders** — final text pending) |
 | `404.html` | any missing URL | Redirects back to the home page |
@@ -39,6 +40,7 @@ then open http://localhost:8000
 3. **Real screenshots** — replace the SVGs in `assets/screenshots/` (see `assets/README.md`).
 4. **Phone mockup & favicon & store badges** — see `assets/README.md`.
 5. **Final legal text** — replace the DRAFT placeholders in `privacy.html` and `terms.html`, then remove the draft banner and the `draft-chip` spans.
+6. **Guide wording vs. the real app** — `guide.html` has a `TODO` at the top: once the app UI is final, make the button/screen names in the steps match word-for-word what users actually see.
 6. **OG/social URLs** — if you rename the repo or add a custom domain, update the `og:` meta tags in `index.html` and the absolute `/zman-site/` links in `404.html`.
 
 ## Deployment (GitHub Pages)

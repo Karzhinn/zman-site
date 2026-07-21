@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('zman-lang') === 'en') {
+          document.documentElement.setAttribute('lang', 'en');
+          document.documentElement.setAttribute('dir', 'ltr');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ڕێنمایی بەکارهێنان — زمان</title>
+  <meta name="description" content="ڕێنمایی ئەپی زمان — چۆن هەژمار دروست بکەیت، بچیتە ژوورەوە بە گووگڵ یان ئەپڵ، وشەی نهێنی بگۆڕیت و هەژمارەکەت بسڕیتەوە.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body
+  data-title-ku="ڕێنمایی بەکارهێنان — زمان"
+  data-title-en="User Guide — ZMAN"
+  data-desc-ku="ڕێنمایی ئەپی زمان — چۆن هەژمار دروست بکەیت، بچیتە ژوورەوە بە گووگڵ یان ئەپڵ، وشەی نهێنی بگۆڕیت و هەژمارەکەت بسڕیتەوە."
+  data-desc-en="ZMAN user guide — how to sign up, sign in with Google or Apple, reset your password, and delete your account.">
+
+  <a class="skip-link" href="#main" data-ku="بازدان بۆ ناوەڕۆک" data-en="Skip to content">بازدان بۆ ناوەڕۆک</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" data-aria-ku="زمان — پەڕەی سەرەکی" data-aria-en="ZMAN — home" aria-label="زمان — پەڕەی سەرەکی">
+        <img src="assets/logo-mark.png" alt="" width="60" height="30">
+        <span class="brand-latin" aria-hidden="true">ZMAN</span>
+      </a>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" data-aria-ku="گۆڕینی زمان بۆ ئینگلیزی" data-aria-en="Switch language to Kurdish" aria-label="گۆڕینی زمان بۆ ئینگلیزی">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-toggle-label">English</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="legal-hero">
+      <div class="container">
+        <a class="back-link" href="index.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span data-ku="گەڕانەوە بۆ پەڕەی سەرەکی" data-en="Back to home">گەڕانەوە بۆ پەڕەی سەرەکی</span>
+        </a>
+        <h1 data-ku="ڕێنمایی بەکارهێنان" data-en="User Guide">ڕێنمایی بەکارهێنان</h1>
+        <p class="legal-updated"
+           data-ku="هەموو ئەوەی پێویستە دەربارەی هەژمارەکەت بیزانیت — بە هەنگاوی سادە."
+           data-en="Everything you need to know about your account — in simple steps.">هەموو ئەوەی پێویستە دەربارەی هەژمارەکەت بیزانیت — بە هەنگاوی سادە.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         TODO — CHECK AGAINST THE REAL APP.
+         The steps below describe the flows in general terms (profile tab →
+         settings → …). Once the app UI is final, adjust the exact button and
+         screen names here so they match word-for-word what users actually see.
+         ====================================================================== -->
+
+    <div class="container guide-body">
+
+      <nav class="guide-toc" data-aria-ku="ناوەڕۆکی ڕێنمایی" data-aria-en="Guide contents" aria-label="ناوەڕۆکی ڕێنمایی">
+        <h2 data-ku="ناوەڕۆک" data-en="Contents">ناوەڕۆک</h2>
+        <ol>
+          <li><a href="#start">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span data-ku="دەستپێکردن بەبێ هەژمار" data-en="Start without an account">دەستپێکردن بەبێ هەژمار</span>
+          </a></li>
+          <li><a href="#signup">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            <span data-ku="دروستکردنی هەژمار" data-en="Create an account">دروستکردنی هەژمار</span>
+          </a></li>
+          <li><a href="#signin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            <span data-ku="چوونەژوورەوە" data-en="Sign in">چوونەژوورەوە</span>
+          </a></li>
+          <li><a href="#password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span data-ku="لەبیرکردنی وشەی نهێنی" data-en="Forgot your password">لەبیرکردنی وشەی نهێنی</span>
+          </a></li>
+          <li><a href="#profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>
+            <span data-ku="گۆڕینی ناوی بەکارهێنەر" data-en="Change your username">گۆڕینی ناوی بەکارهێنەر</span>
+          </a></li>
+          <li><a href="#signout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            <span data-ku="دەرچوون لە هەژمار" data-en="Sign out">دەرچوون لە هەژمار</span>
+          </a></li>
+          <li><a href="#delete">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            <span data-ku="سڕینەوەی هەژمار" data-en="Delete your account">سڕینەوەی هەژمار</span>
+          </a></li>
+          <li><a href="#help">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span data-ku="پرسیارە باوەکان" data-en="Common questions">پرسیارە باوەکان</span>
+          </a></li>
+        </ol>
+      </nav>
+
+      <!-- ============ 1. START WITHOUT AN ACCOUNT ============ -->
+      <section class="guide-section" id="start">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </span>
+          <span data-ku="دەستپێکردن بەبێ هەژمار" data-en="Start without an account">دەستپێکردن بەبێ هەژمار</span>
+        </h2>
+        <p class="lead"
+           data-ku="بۆ دەستپێکردن پێویستت بە هەژمار نییە. دەتوانیت یەکسەر فێربوون دەستپێبکەیت."
+           data-en="You don’t need an account to start. You can begin learning right away.">بۆ دەستپێکردن پێویستت بە هەژمار نییە. دەتوانیت یەکسەر فێربوون دەستپێبکەیت.</p>
+
+        <ol class="steps">
+          <li><p data-ku="ئەپی زمان لەسەر مۆبایلەکەت بکەرەوە."
+                 data-en="Open the ZMAN app on your phone.">ئەپی زمان لەسەر مۆبایلەکەت بکەرەوە.</p></li>
+          <li><p data-ku="یەکەم وانە هەڵبژێرە و دەستبکە بە فێربوون — وانەکان بەبێ ئینتەرنێتیش کاردەکەن."
+                 data-en="Pick the first lesson and start learning — lessons work offline too.">یەکەم وانە هەڵبژێرە و دەستبکە بە فێربوون — وانەکان بەبێ ئینتەرنێتیش کاردەکەن.</p></li>
+        </ol>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p data-ku="بەبێ هەژمار، پێشکەوتنەکەت تەنیا لەسەر ئەم مۆبایلە دەمێنێتەوە. ئەگەر ئەپەکە بسڕیتەوە یان مۆبایل بگۆڕیت، لەدەست دەچێت. بۆ پاراستنی پێشکەوتنەکەت هەژمارێک دروست بکە."
+             data-en="Without an account, your progress stays only on this phone. If you uninstall the app or change phones, it is lost. Create an account to keep your progress safe.">بەبێ هەژمار، پێشکەوتنەکەت تەنیا لەسەر ئەم مۆبایلە دەمێنێتەوە. ئەگەر ئەپەکە بسڕیتەوە یان مۆبایل بگۆڕیت، لەدەست دەچێت. بۆ پاراستنی پێشکەوتنەکەت هەژمارێک دروست بکە.</p>
+        </div>
+      </section>
+
+      <!-- ============ 2. CREATE AN ACCOUNT ============ -->
+      <section class="guide-section" id="signup">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          </span>
+          <span data-ku="دروستکردنی هەژمار (خۆتۆمارکردن)" data-en="Create an account (sign up)">دروستکردنی هەژمار (خۆتۆمارکردن)</span>
+        </h2>
+        <p class="lead"
+           data-ku="هەژمار پێشکەوتنەکەت دەپارێزێت، ڕێگەت پێدەدات لەسەر چەند ئامێرێک فێربیت و پێشبڕکێی هەفتانە لەگەڵ هاوڕێکان چالاک دەکات. سێ ڕێگە هەیە:"
+           data-en="An account saves your progress, lets you learn on more than one device, and unlocks weekly leaderboards with friends. There are three ways:">هەژمار پێشکەوتنەکەت دەپارێزێت، ڕێگەت پێدەدات لەسەر چەند ئامێرێک فێربیت و پێشبڕکێی هەفتانە لەگەڵ هاوڕێکان چالاک دەکات. سێ ڕێگە هەیە:</p>
+
+        <div class="methods">
+          <div class="method-card recommended">
+            <span class="rec-pill" data-ku="پێشنیارکراو" data-en="Recommended">پێشنیارکراو</span>
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.55-5.17 3.55-8.87z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.91l-3.88-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.28a12 12 0 0 0 0 10.76l3.99-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.28 6.62l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></svg>
+              <span data-ku="بە گووگڵ" data-en="With Google">بە گووگڵ</span>
+            </h3>
+            <p data-ku="خێراترین ڕێگە. وشەی نهێنی نوێ ناوێت — تەنیا هەژماری گووگڵەکەت هەڵدەبژێریت."
+               data-en="The fastest way. No new password to remember — you just pick your Google account.">خێراترین ڕێگە. وشەی نهێنی نوێ ناوێت — تەنیا هەژماری گووگڵەکەت هەڵدەبژێریت.</p>
+          </div>
+
+          <div class="method-card recommended">
+            <span class="rec-pill" data-ku="پێشنیارکراو" data-en="Recommended">پێشنیارکراو</span>
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span data-ku="بە ئەپڵ" data-en="With Apple">بە ئەپڵ</span>
+            </h3>
+            <p data-ku="باشترین بژاردە لەسەر ئایفۆن. دەتوانیت ئیمەیڵەکەت بشاریتەوە و بە Face ID یان Touch ID بچیتە ژوورەوە."
+               data-en="Best option on iPhone. You can hide your email and sign in with Face ID or Touch ID.">باشترین بژاردە لەسەر ئایفۆن. دەتوانیت ئیمەیڵەکەت بشاریتەوە و بە Face ID یان Touch ID بچیتە ژوورەوە.</p>
+          </div>
+
+          <div class="method-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span data-ku="بە ئیمەیڵ" data-en="With email">بە ئیمەیڵ</span>
+            </h3>
+            <p data-ku="ئیمەیڵ و وشەیەکی نهێنی خۆت دادەنێیت. وشەی نهێنی بەلایەنی کەم ٦ پیت بێت."
+               data-en="You set your own email and password. The password must be at least 6 characters.">ئیمەیڵ و وشەیەکی نهێنی خۆت دادەنێیت. وشەی نهێنی بەلایەنی کەم ٦ پیت بێت.</p>
+          </div>
+        </div>
+
+        <h3 data-ku="هەنگاوەکان" data-en="Steps">هەنگاوەکان</h3>
+        <ol class="steps">
+          <li><p data-ku="لە ئەپەکەدا بڕۆ بۆ تابی پڕۆفایل (وێنۆچکەی کەس لە خوارەوەی پەڕەکە)."
+                 data-en="In the app, go to the profile tab (the person icon in the bottom bar).">لە ئەپەکەدا بڕۆ بۆ تابی پڕۆفایل (وێنۆچکەی کەس لە خوارەوەی پەڕەکە).</p></li>
+          <li><p data-ku="دەست بنێ بە «دروستکردنی هەژمار» یان «چوونەژوورەوە»."
+                 data-en="Tap “Create account” or “Sign in”.">دەست بنێ بە «دروستکردنی هەژمار» یان «چوونەژوورەوە».</p></li>
+          <li><p data-ku="یەکێک لە ڕێگەکانی سەرەوە هەڵبژێرە: گووگڵ، ئەپڵ، یان ئیمەیڵ."
+                 data-en="Choose one of the methods above: Google, Apple, or email.">یەکێک لە ڕێگەکانی سەرەوە هەڵبژێرە: گووگڵ، ئەپڵ، یان ئیمەیڵ.</p></li>
+          <li><p data-ku="ئەگەر گووگڵ یان ئەپڵت هەڵبژارد، هەژمارەکەت لە لیستەکەدا هەڵبژێرە و ڕەزامەندی بدە. ئەگەر ئیمەیڵت هەڵبژارد، ئیمەیڵ و وشەی نهێنی بنووسە."
+                 data-en="If you chose Google or Apple, pick your account from the list and confirm. If you chose email, type your email address and a password.">ئەگەر گووگڵ یان ئەپڵت هەڵبژارد، هەژمارەکەت لە لیستەکەدا هەڵبژێرە و ڕەزامەندی بدە. ئەگەر ئیمەیڵت هەڵبژارد، ئیمەیڵ و وشەی نهێنی بنووسە.</p></li>
+          <li><p data-ku="ناوێکی بەکارهێنەر بۆ خۆت هەڵبژێرە — ئەمە ئەو ناوەیە کە هاوڕێکانت لە خشتەی پێشبڕکێدا دەیبینن."
+                 data-en="Choose a username — this is the name friends will see on the leaderboard.">ناوێکی بەکارهێنەر بۆ خۆت هەڵبژێرە — ئەمە ئەو ناوەیە کە هاوڕێکانت لە خشتەی پێشبڕکێدا دەیبینن.</p></li>
+          <li><p data-ku="تەواو! پێشکەوتنەکەت ئێستا پارێزراوە و خۆکارانە هاوکات دەکرێت."
+                 data-en="Done! Your progress is now saved and syncs automatically.">تەواو! پێشکەوتنەکەت ئێستا پارێزراوە و خۆکارانە هاوکات دەکرێت.</p></li>
+        </ol>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p data-ku="ئەو پێشکەوتنەی پێش دروستکردنی هەژمار بەدەستت هێناوە، لە کاتی یەکەم چوونەژوورەوەدا دەچێتە سەر هەژمارەکەت."
+             data-en="Any progress you made before creating an account is carried over when you first sign in.">ئەو پێشکەوتنەی پێش دروستکردنی هەژمار بەدەستت هێناوە، لە کاتی یەکەم چوونەژوورەوەدا دەچێتە سەر هەژمارەکەت.</p>
+        </div>
+      </section>
+
+      <!-- ============ 3. SIGN IN ============ -->
+      <section class="guide-section" id="signin">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          </span>
+          <span data-ku="چوونەژوورەوە" data-en="Sign in">چوونەژوورەوە</span>
+        </h2>
+        <p class="lead"
+           data-ku="مۆبایلێکی نوێت هەیە یان پێشتر دەرچوویت؟ بەم شێوەیە دەگەڕێیتەوە بۆ هەژمارەکەت."
+           data-en="Got a new phone, or signed out before? Here’s how to get back into your account.">مۆبایلێکی نوێت هەیە یان پێشتر دەرچوویت؟ بەم شێوەیە دەگەڕێیتەوە بۆ هەژمارەکەت.</p>
+
+        <ol class="steps">
+          <li><p data-ku="ئەپەکە بکەرەوە و بڕۆ بۆ تابی پڕۆفایل."
+                 data-en="Open the app and go to the profile tab.">ئەپەکە بکەرەوە و بڕۆ بۆ تابی پڕۆفایل.</p></li>
+          <li><p data-ku="دەست بنێ بە «چوونەژوورەوە»."
+                 data-en="Tap “Sign in”.">دەست بنێ بە «چوونەژوورەوە».</p></li>
+          <li><p data-ku="هەمان ئەو ڕێگەیە هەڵبژێرە کە پێی هەژمارەکەت دروستکرد — گووگڵ، ئەپڵ، یان ئیمەیڵ."
+                 data-en="Use the same method you signed up with — Google, Apple, or email.">هەمان ئەو ڕێگەیە هەڵبژێرە کە پێی هەژمارەکەت دروستکرد — گووگڵ، ئەپڵ، یان ئیمەیڵ.</p></li>
+          <li><p data-ku="پێشکەوتن، خاڵ و ستریکەکەت خۆکارانە دەگەڕێنەوە."
+                 data-en="Your progress, XP, and streak come back automatically.">پێشکەوتن، خاڵ و ستریکەکەت خۆکارانە دەگەڕێنەوە.</p></li>
+        </ol>
+
+        <div class="callout warn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p data-ku="گرنگ: هەمیشە بە هەمان ڕێگە بچۆرە ژوورەوە. ئەگەر بە گووگڵ هەژمارت دروستکردبێت و دواتر بە ئیمەیڵ هەوڵبدەیت، لەوانەیە هەژمارێکی جیاواز و بەتاڵ دروست ببێت."
+             data-en="Important: always sign in the same way. If you signed up with Google and later try email, you may end up with a different, empty account.">گرنگ: هەمیشە بە هەمان ڕێگە بچۆرە ژوورەوە. ئەگەر بە گووگڵ هەژمارت دروستکردبێت و دواتر بە ئیمەیڵ هەوڵبدەیت، لەوانەیە هەژمارێکی جیاواز و بەتاڵ دروست ببێت.</p>
+        </div>
+      </section>
+
+      <!-- ============ 4. FORGOT PASSWORD ============ -->
+      <section class="guide-section" id="password">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <span data-ku="لەبیرکردنی وشەی نهێنی" data-en="Forgot your password">لەبیرکردنی وشەی نهێنی</span>
+        </h2>
+        <p class="lead"
+           data-ku="ئەمە تەنیا بۆ ئەو هەژمارانەیە کە بە ئیمەیڵ دروستکراون."
+           data-en="This only applies to accounts created with an email address.">ئەمە تەنیا بۆ ئەو هەژمارانەیە کە بە ئیمەیڵ دروستکراون.</p>
+
+        <ol class="steps">
+          <li><p data-ku="لە پەڕەی چوونەژوورەوە، دەست بنێ بە «وشەی نهێنیم لەبیرچووە»."
+                 data-en="On the sign-in screen, tap “Forgot password”.">لە پەڕەی چوونەژوورەوە، دەست بنێ بە «وشەی نهێنیم لەبیرچووە».</p></li>
+          <li><p data-ku="ئەو ئیمەیڵە بنووسە کە پێی هەژمارەکەت دروستکرد."
+                 data-en="Enter the email address you used to create the account.">ئەو ئیمەیڵە بنووسە کە پێی هەژمارەکەت دروستکرد.</p></li>
+          <li><p data-ku="ئیمەیڵەکەت بکەرەوە و کلیک لەسەر ئەو بەستەرە بکە کە بۆت هاتووە. ئەگەر نەهات، فۆڵدەری spam بپشکنە."
+                 data-en="Open your inbox and tap the link we send you. If it doesn’t arrive, check your spam folder.">ئیمەیڵەکەت بکەرەوە و کلیک لەسەر ئەو بەستەرە بکە کە بۆت هاتووە. ئەگەر نەهات، فۆڵدەری spam بپشکنە.</p></li>
+          <li><p data-ku="وشەیەکی نهێنی نوێ دابنێ و بە نوێیەکە بچۆرە ژوورەوە."
+                 data-en="Set a new password and sign in with it.">وشەیەکی نهێنی نوێ دابنێ و بە نوێیەکە بچۆرە ژوورەوە.</p></li>
+        </ol>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p data-ku="ئەگەر بە گووگڵ یان ئەپڵ چوویتە ژوورەوە، زمان هیچ وشەیەکی نهێنی بۆ تۆ هەڵناگرێت — وشەی نهێنی لەلایەن گووگڵ یان ئەپڵەوە بەڕێوەدەبرێت."
+             data-en="If you sign in with Google or Apple, ZMAN doesn’t store a password for you — your password is managed by Google or Apple.">ئەگەر بە گووگڵ یان ئەپڵ چوویتە ژوورەوە، زمان هیچ وشەیەکی نهێنی بۆ تۆ هەڵناگرێت — وشەی نهێنی لەلایەن گووگڵ یان ئەپڵەوە بەڕێوەدەبرێت.</p>
+        </div>
+      </section>
+
+      <!-- ============ 5. CHANGE USERNAME ============ -->
+      <section class="guide-section" id="profile">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>
+          </span>
+          <span data-ku="گۆڕینی ناوی بەکارهێنەر" data-en="Change your username">گۆڕینی ناوی بەکارهێنەر</span>
+        </h2>
+
+        <ol class="steps">
+          <li><p data-ku="بڕۆ بۆ تابی پڕۆفایل."
+                 data-en="Go to the profile tab.">بڕۆ بۆ تابی پڕۆفایل.</p></li>
+          <li><p data-ku="دەست بنێ بە ڕێکخستنەکان یان دەستکاریکردنی پڕۆفایل."
+                 data-en="Tap settings or edit profile.">دەست بنێ بە ڕێکخستنەکان یان دەستکاریکردنی پڕۆفایل.</p></li>
+          <li><p data-ku="ناوی نوێ بنووسە و پاشەکەوتی بکە."
+                 data-en="Type your new name and save.">ناوی نوێ بنووسە و پاشەکەوتی بکە.</p></li>
+        </ol>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p data-ku="ناوی بەکارهێنەر بۆ هەموو بەکارهێنەران لە خشتەی پێشبڕکێدا دیارە، بۆیە ناوێکی گونجاو هەڵبژێرە. ناوی سووکایەتیئامێز ڕێگەپێدراو نییە."
+             data-en="Your username is visible to everyone on the leaderboard, so pick something appropriate. Offensive names are not allowed.">ناوی بەکارهێنەر بۆ هەموو بەکارهێنەران لە خشتەی پێشبڕکێدا دیارە، بۆیە ناوێکی گونجاو هەڵبژێرە. ناوی سووکایەتیئامێز ڕێگەپێدراو نییە.</p>
+        </div>
+      </section>
+
+      <!-- ============ 6. SIGN OUT ============ -->
+      <section class="guide-section" id="signout">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </span>
+          <span data-ku="دەرچوون لە هەژمار" data-en="Sign out">دەرچوون لە هەژمار</span>
+        </h2>
+
+        <ol class="steps">
+          <li><p data-ku="بڕۆ بۆ تابی پڕۆفایل ← ڕێکخستنەکان."
+                 data-en="Go to the profile tab → settings.">بڕۆ بۆ تابی پڕۆفایل ← ڕێکخستنەکان.</p></li>
+          <li><p data-ku="دەست بنێ بە «دەرچوون»."
+                 data-en="Tap “Sign out”.">دەست بنێ بە «دەرچوون».</p></li>
+        </ol>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p data-ku="دەرچوون هەژمارەکەت ناسڕێتەوە. هەر کاتێک بتەوێت دەتوانیت بگەڕێیتەوە و هەموو پێشکەوتنەکەت لەوێیە."
+             data-en="Signing out does not delete your account. You can come back any time and all your progress will still be there.">دەرچوون هەژمارەکەت ناسڕێتەوە. هەر کاتێک بتەوێت دەتوانیت بگەڕێیتەوە و هەموو پێشکەوتنەکەت لەوێیە.</p>
+        </div>
+      </section>
+
+      <!-- ============ 7. DELETE ACCOUNT ============ -->
+      <section class="guide-section" id="delete">
+        <h2>
+          <span class="guide-icon tint-red" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </span>
+          <span data-ku="سڕینەوەی هەژمار و زانیارییەکان" data-en="Delete your account &amp; data">سڕینەوەی هەژمار و زانیارییەکان</span>
+        </h2>
+        <p class="lead"
+           data-ku="دوو ڕێگە هەیە بۆ سڕینەوەی هەژمارەکەت و هەموو ئەو زانیاریانەی پەیوەندییان پێوەیە."
+           data-en="There are two ways to delete your account and all data linked to it.">دوو ڕێگە هەیە بۆ سڕینەوەی هەژمارەکەت و هەموو ئەو زانیاریانەی پەیوەندییان پێوەیە.</p>
+
+        <h3 data-ku="ڕێگەی یەکەم: لە ناو ئەپەکەوە" data-en="Option 1: inside the app">ڕێگەی یەکەم: لە ناو ئەپەکەوە</h3>
+        <ol class="steps">
+          <li><p data-ku="بڕۆ بۆ تابی پڕۆفایل ← ڕێکخستنەکان."
+                 data-en="Go to the profile tab → settings.">بڕۆ بۆ تابی پڕۆفایل ← ڕێکخستنەکان.</p></li>
+          <li><p data-ku="دەست بنێ بە «سڕینەوەی هەژمار»."
+                 data-en="Tap “Delete account”.">دەست بنێ بە «سڕینەوەی هەژمار».</p></li>
+          <li><p data-ku="داواکارییەکە پشتڕاست بکەرەوە. لەوانەیە داوات لێبکرێت دووبارە بچیتەوە ژوورەوە بۆ دڵنیابوون لەوەی خۆتیت."
+                 data-en="Confirm the request. You may be asked to sign in again to prove it’s you.">داواکارییەکە پشتڕاست بکەرەوە. لەوانەیە داوات لێبکرێت دووبارە بچیتەوە ژوورەوە بۆ دڵنیابوون لەوەی خۆتیت.</p></li>
+        </ol>
+
+        <h3 data-ku="ڕێگەی دووەم: بە ئیمەیڵ" data-en="Option 2: by email">ڕێگەی دووەم: بە ئیمەیڵ</h3>
+        <ol class="steps">
+          <li><p data-ku="ئیمەیڵ بنێرە بۆ ناونیشانی پشتگیری لە خوارەوە، لە هەمان ئەو ئیمەیڵەوە کە هەژمارەکەت پێی دروستکردووە."
+                 data-en="Email the support address below from the same email address your account uses.">ئیمەیڵ بنێرە بۆ ناونیشانی پشتگیری لە خوارەوە، لە هەمان ئەو ئیمەیڵەوە کە هەژمارەکەت پێی دروستکردووە.</p></li>
+          <li><p data-ku="ناوی بەکارهێنەرەکەت بنووسە و ڕوونی بکەرەوە کە داوای سڕینەوەی هەژمار دەکەیت."
+                 data-en="Include your username and state that you are requesting account deletion.">ناوی بەکارهێنەرەکەت بنووسە و ڕوونی بکەرەوە کە داوای سڕینەوەی هەژمار دەکەیت.</p></li>
+        </ol>
+
+        <p style="text-align:center; margin-top: 20px;">
+          <a class="btn btn-primary" href="mailto:zmanapp@outlook.com?subject=ZMAN%20%E2%80%94%20Account%20deletion%20request">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-ku="داوای سڕینەوەی هەژمار بکە" data-en="Request account deletion">داوای سڕینەوەی هەژمار بکە</span>
+          </a>
+        </p>
+
+        <div class="callout warn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p data-ku="سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، ستریک و دەستکەوتەکانت لەدەست دەچن."
+             data-en="Deletion is permanent and cannot be undone. All your progress, XP, streaks, and achievements will be lost.">سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، ستریک و دەستکەوتەکانت لەدەست دەچن.</p>
+        </div>
+
+        <p style="margin-top: 18px;">
+          <span data-ku="بۆ وردەکاریی زیاتر دەربارەی زانیارییەکانت، "
+                data-en="For more detail about your data, see the ">بۆ وردەکاریی زیاتر دەربارەی زانیارییەکانت، </span><a href="privacy.html" data-ku="سیاسەتی تایبەتمەندی ببینە" data-en="Privacy Policy">سیاسەتی تایبەتمەندی ببینە</a><span data-ku="." data-en=".">.</span>
+        </p>
+      </section>
+
+      <!-- ============ 8. FAQ ============ -->
+      <section class="guide-section" id="help">
+        <h2>
+          <span class="guide-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </span>
+          <span data-ku="پرسیارە باوەکان" data-en="Common questions">پرسیارە باوەکان</span>
+        </h2>
+
+        <div class="faq">
+          <details>
+            <summary data-ku="ئایا زمان بەخۆڕاییە؟" data-en="Is ZMAN free?">ئایا زمان بەخۆڕاییە؟</summary>
+            <p data-ku="بەڵێ. داگرتن و فێربوون بەخۆڕاییە."
+               data-en="Yes. Downloading and learning are free.">بەڵێ. داگرتن و فێربوون بەخۆڕاییە.</p>
+          </details>
+
+          <details>
+            <summary data-ku="ئایا پێویستە هەژمارم هەبێت؟" data-en="Do I need an account?">ئایا پێویستە هەژمارم هەبێت؟</summary>
+            <p data-ku="نەخێر. دەتوانیت بەبێ هەژمار دەستپێبکەیت. بەڵام هەژمار پێشکەوتنەکەت دەپارێزێت و پێشبڕکێ لەگەڵ هاوڕێکان چالاک دەکات."
+               data-en="No. You can start without one. But an account saves your progress and unlocks leaderboards with friends.">نەخێر. دەتوانیت بەبێ هەژمار دەستپێبکەیت. بەڵام هەژمار پێشکەوتنەکەت دەپارێزێت و پێشبڕکێ لەگەڵ هاوڕێکان چالاک دەکات.</p>
+          </details>
+
+          <details>
+            <summary data-ku="ئایا بەبێ ئینتەرنێت کاردەکات؟" data-en="Does it work offline?">ئایا بەبێ ئینتەرنێت کاردەکات؟</summary>
+            <p data-ku="بەڵێ، وانەکان بەبێ ئینتەرنێت کاردەکەن. بەڵام بۆ هاوکاتکردنی پێشکەوتن و خشتەی پێشبڕکێ پێویستت بە ئینتەرنێتە."
+               data-en="Yes, lessons work offline. You need internet only to sync your progress and to see leaderboards.">بەڵێ، وانەکان بەبێ ئینتەرنێت کاردەکەن. بەڵام بۆ هاوکاتکردنی پێشکەوتن و خشتەی پێشبڕکێ پێویستت بە ئینتەرنێتە.</p>
+          </details>
+
+          <details>
+            <summary data-ku="پێشکەوتنەکەم لەسەر مۆبایلی نوێ نادیارە — چی بکەم؟" data-en="My progress isn’t showing on my new phone — what do I do?">پێشکەوتنەکەم لەسەر مۆبایلی نوێ نادیارە — چی بکەم؟</summary>
+            <p data-ku="دڵنیابەرەوە کە بە هەمان ڕێگە (گووگڵ، ئەپڵ یان ئیمەیڵ) چوویتەتە ژوورەوە کە پێی هەژمارەکەت دروستکردووە، و ئینتەرنێتت هەیە. ئەگەر کێشەکە مایەوە، ئیمەیڵمان بۆ بنێرە."
+               data-en="Make sure you signed in with the same method (Google, Apple, or email) you used to create the account, and that you have internet. If it still doesn’t work, email us.">دڵنیابەرەوە کە بە هەمان ڕێگە (گووگڵ، ئەپڵ یان ئیمەیڵ) چوویتەتە ژوورەوە کە پێی هەژمارەکەت دروستکردووە، و ئینتەرنێتت هەیە. ئەگەر کێشەکە مایەوە، ئیمەیڵمان بۆ بنێرە.</p>
+          </details>
+
+          <details>
+            <summary data-ku="دڵەکانم تەواو بوون — چی ڕوودەدات؟" data-en="I ran out of hearts — what happens?">دڵەکانم تەواو بوون — چی ڕوودەدات؟</summary>
+            <p data-ku="دڵەکان بەمرۆر خۆیان پڕدەبنەوە، بۆیە دەتوانیت دواتر بگەڕێیتەوە و بەردەوام بیت."
+               data-en="Hearts refill over time, so you can come back a little later and continue.">دڵەکان بەمرۆر خۆیان پڕدەبنەوە، بۆیە دەتوانیت دواتر بگەڕێیتەوە و بەردەوام بیت.</p>
+          </details>
+
+          <details>
+            <summary data-ku="ستریکەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟" data-en="I lost my streak, can it be restored?">ستریکەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟</summary>
+            <p data-ku="ستریک کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە."
+               data-en="Your streak is kept by completing at least one lesson every day. If you think something went wrong, email us.">ستریک کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە.</p>
+          </details>
+        </div>
+
+        <div class="callout info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <p>
+            <span data-ku="وەڵامەکەت لێرە نەدۆزییەوە؟ ئیمەیڵمان بۆ بنێرە بە کوردی یان ئینگلیزی: "
+                  data-en="Didn’t find your answer here? Email us in Kurdish or English: ">وەڵامەکەت لێرە نەدۆزییەوە؟ ئیمەیڵمان بۆ بنێرە بە کوردی یان ئینگلیزی: </span>
+            <a class="email-link" href="mailto:zmanapp@outlook.com">zmanapp@outlook.com</a>
+          </p>
+        </div>
+      </section>
+
+      <nav class="legal-footer-nav" data-aria-ku="بەستەری پەیوەندیدار" data-aria-en="Related links" aria-label="بەستەری پەیوەندیدار">
+        <a class="btn btn-ghost" href="privacy.html" data-ku="سیاسەتی تایبەتمەندی ←" data-en="Privacy Policy →">سیاسەتی تایبەتمەندی ←</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span data-ku="زمان" data-en="ZMAN">زمان</span>
+          <span class="brand-latin" aria-hidden="true">ZMAN</span>
+        </div>
+        <nav class="footer-nav" data-aria-ku="بەستەرەکانی خوارەوە" data-aria-en="Footer links" aria-label="بەستەرەکانی خوارەوە">
+          <a href="index.html" data-ku="پەڕەی سەرەکی" data-en="Home">پەڕەی سەرەکی</a>
+          <a href="guide.html" data-ku="ڕێنمایی" data-en="Guide">ڕێنمایی</a>
+          <a href="privacy.html" data-ku="سیاسەتی تایبەتمەندی" data-en="Privacy Policy">سیاسەتی تایبەتمەندی</a>
+          <a href="terms.html" data-ku="مەرجەکانی بەکارهێنان" data-en="Terms of Service">مەرجەکانی بەکارهێنان</a>
+        </nav>
+      </div>
+      <div class="footer-meta">
+        <span data-ku="© ٢٠٢٦ زمان. هەموو مافەکان پارێزراون."
+              data-en="© 2026 ZMAN. All rights reserved.">© ٢٠٢٦ زمان. هەموو مافەکان پارێزراون.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
