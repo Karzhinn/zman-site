@@ -1,0 +1,89 @@
+# Sveltia CMS configuration for the ZMAN site.
+# Full setup guide: see the "Content admin (Sveltia CMS)" section in ../README.md
+# Docs: https://github.com/sveltia/sveltia-cms
+
+backend:
+  name: github
+  repo: Karzhinn/zman-site
+  branch: main
+  # base_url is the one-time OAuth relay you deploy (a free Cloudflare Worker).
+  # It lets you log in with GitHub from anywhere. See README for the exact steps.
+  # TODO: replace the line below with your worker URL, e.g.
+  #   https://zman-cms-auth.<your-subdomain>.workers.dev
+  base_url: https://REPLACE-WITH-YOUR-AUTH-WORKER.workers.dev
+
+# Local editing WITHOUT any OAuth setup (Chrome or Edge only):
+#   1. serve the site locally (e.g.  npx serve .  )
+#   2. open  http://localhost:PORT/admin/
+#   3. click "Work with Local Repository" and pick this project folder.
+# Set this to false if you ever want to force the GitHub login locally too.
+local_backend: true
+
+# Where uploaded images would go (not used by the alert bar, but required by the CMS).
+media_folder: assets/uploads
+public_folder: /zman-site/assets/uploads
+
+site_url: https://karzhinn.github.io/zman-site/
+display_url: https://karzhinn.github.io/zman-site/
+
+collections:
+  - name: site
+    label: Site content
+    files:
+      - name: alerts
+        label: Alerts / status bar
+        file: content/alerts.json
+        format: json
+        icon: campaign
+        description: >-
+          Banners shown at the very top of every page. Turn one on with
+          "Show this alert". Keep only one active at a time for the cleanest look.
+        fields:
+          - label: Alerts
+            name: alerts
+            widget: list
+            label_singular: Alert
+            summary: '{{fields.severity}} — {{fields.message_en}}'
+            fields:
+              - label: ID
+                name: id
+                widget: string
+                hint: >-
+                  A short unique tag, e.g. ios-launch. Change it when you want an
+                  updated message to reappear for people who dismissed the old one.
+              - label: Show this alert
+                name: active
+                widget: boolean
+                default: false
+              - label: Type
+                name: severity
+                widget: select
+                options:
+                  - { label: 'Info (indigo)', value: info }
+                  - { label: 'Success (green)', value: success }
+                  - { label: 'Warning (orange)', value: warning }
+                  - { label: 'Critical (red)', value: critical }
+                default: info
+              - label: Can be dismissed
+                name: dismissible
+                widget: boolean
+                default: true
+              - label: Message (Kurdish)
+                name: message_ku
+                widget: string
+              - label: Message (English)
+                name: message_en
+                widget: string
+              - label: Link URL (optional)
+                name: link_url
+                widget: string
+                required: false
+                hint: Leave empty for no button. Use a full https:// address or a page like privacy.html
+              - label: Link text — Kurdish (optional)
+                name: link_label_ku
+                widget: string
+                required: false
+              - label: Link text — English (optional)
+                name: link_label_en
+                widget: string
+                required: false

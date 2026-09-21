@@ -214,6 +214,54 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 3px 8px rgba(217, 119, 6, 0.4);
 }
 
+/* ---------- Site alert / status bar (content managed via Sveltia CMS) ---------- */
+.site-alert[hidden] { display: none; }
+.site-alert-bar {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.site-alert-bar + .site-alert-bar { border-top: 1px solid rgba(255, 255, 255, 0.25); }
+/* Darker success/warning shades so white text keeps a WCAG-AA (>=4.5:1) contrast ratio */
+.site-alert-bar.sev-info     { background: var(--indigo-600); }  /* white on indigo  ~6.1:1 */
+.site-alert-bar.sev-success  { background: #15803D; }            /* white on green-700 ~5.0:1 */
+.site-alert-bar.sev-warning  { background: #C2410C; }            /* white on orange-700 ~5.2:1 */
+.site-alert-bar.sev-critical { background: var(--red-600); }     /* white on red     ~4.8:1 */
+
+.site-alert-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding-block: 8px;
+}
+.site-alert-icon { display: inline-flex; flex: none; }
+.site-alert-msg { flex: 1 1 auto; line-height: 1.45; }
+.site-alert-link {
+  flex: none;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.site-alert-link:hover { text-decoration: none; opacity: 0.9; }
+.site-alert-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s var(--ease);
+}
+.site-alert-close:hover { background: rgba(255, 255, 255, 0.3); }
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
