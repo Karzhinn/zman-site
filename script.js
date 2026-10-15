@@ -200,6 +200,31 @@
         shown++;
       }
       host.hidden = shown === 0;
+      // On phones long messages are clamped to 3 lines (styles.css); offer a
+      // More/Less toggle only where the text actually overflows.
+      var msgs = host.querySelectorAll('.site-alert-msg');
+      for (var m = 0; m < msgs.length; m++) { addMoreToggle(msgs[m]); }
+    }
+
+    function addMoreToggle(msg) {
+      if (msg.scrollHeight <= msg.clientHeight + 1) { return; }
+      var bar = msg.closest('.site-alert-bar');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'site-alert-more';
+      btn.setAttribute('aria-expanded', 'false');
+      function label(expanded) {
+        btn.setAttribute('data-ku', expanded ? 'کەمتر' : 'زیاتر');
+        btn.setAttribute('data-en', expanded ? 'Less' : 'More');
+        btn.textContent = pick(btn.getAttribute('data-ku'), btn.getAttribute('data-en'));
+      }
+      label(false);
+      btn.addEventListener('click', function () {
+        var expanded = bar.classList.toggle('is-expanded');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        label(expanded);
+      });
+      msg.parentNode.insertBefore(btn, msg.nextSibling);
     }
 
     var url = 'content/alerts.json?_=' + Math.floor(Date.now() / 60000); // light cache-buster

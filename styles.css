@@ -330,6 +330,49 @@ html[lang="en"]  .logo-ku { display: none; }
 }
 .site-alert-close:hover { background: rgba(255, 255, 255, 0.2); }
 
+.site-alert-more {
+  flex: none;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--sun);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+/* Phones: the message gets the full width (clamped to 3 lines until "More"),
+   and the actions drop to their own row — a long CMS message can no longer
+   push the whole page below the fold. */
+@media (max-width: 640px) {
+  .site-alert-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    column-gap: 10px;
+    row-gap: 2px;
+    padding-block: 10px 6px;
+  }
+  .site-alert-icon  { grid-row: 1; grid-column: 1; align-self: start; margin-top: 2px; }
+  .site-alert-msg   {
+    grid-row: 1;
+    grid-column: 2 / -1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+  .site-alert-bar.is-expanded .site-alert-msg { -webkit-line-clamp: unset; line-clamp: none; }
+  .site-alert-more  { grid-row: 2; grid-column: 2; justify-self: start; }
+  .site-alert-link  { grid-row: 2; grid-column: 3; }
+  .site-alert-close { grid-row: 2; grid-column: 4; }
+}
+
 /* ---------- Header (translucent like an iOS nav bar) ---------- */
 .site-header {
   position: sticky;
