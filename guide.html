@@ -17,9 +17,12 @@
   <meta name="description" content="ڕێنمایی ئەپی زمان — چۆن هەژمار دروست بکەیت، بچیتە ژوورەوە بە گووگڵ یان ئەپڵ، وشەی نهێنی بگۆڕیت و هەژمارەکەت بسڕیتەوە.">
   <meta name="robots" content="index,follow">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body
@@ -36,8 +39,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" data-aria-ku="زمان — پەڕەی سەرەکی" data-aria-en="ZMAN — home" aria-label="زمان — پەڕەی سەرەکی">
-        <img src="assets/logo-mark.png" alt="" width="60" height="30">
-        <span class="brand-latin" aria-hidden="true">ZMAN</span>
+        <picture class="logo-ku">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+          <img src="assets/brand/lockup-kurdish-light.svg" alt="" width="111" height="34">
+        </picture>
+        <picture class="logo-en">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+          <img src="assets/brand/lockup-latin-light.svg" alt="" width="125" height="34">
+        </picture>
       </a>
       <div class="header-actions">
         <button class="lang-toggle" type="button" data-aria-ku="گۆڕینی زمان بۆ ئینگلیزی" data-aria-en="Switch language to Kurdish" aria-label="گۆڕینی زمان بۆ ئینگلیزی">
@@ -210,8 +219,8 @@
 
         <div class="callout info">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <p data-ku="پێشکەوتنەکەت خۆکارانە پاڵپشت دەکرێت. ئەگەر مۆبایل بگۆڕیت، تەنیا بە هەمان ڕێگە بچۆرەوە ژوورەوە و هەموو شتێک — وانەکان، خاڵەکان، ستریک و دەستکەوتەکان — دەگەڕێنەوە."
-             data-en="Your progress is backed up automatically. If you change phones, just sign in the same way again and everything — lessons, points, streak, and achievements — comes back.">پێشکەوتنەکەت خۆکارانە پاڵپشت دەکرێت. ئەگەر مۆبایل بگۆڕیت، تەنیا بە هەمان ڕێگە بچۆرەوە ژوورەوە و هەموو شتێک — وانەکان، خاڵەکان، ستریک و دەستکەوتەکان — دەگەڕێنەوە.</p>
+          <p data-ku="پێشکەوتنەکەت خۆکارانە پاڵپشت دەکرێت. ئەگەر مۆبایل بگۆڕیت، تەنیا بە هەمان ڕێگە بچۆرەوە ژوورەوە و هەموو شتێک — وانەکان، خاڵەکان، زنجیرە و دەستکەوتەکان — دەگەڕێنەوە."
+             data-en="Your progress is backed up automatically. If you change phones, just sign in the same way again and everything — lessons, points, streak, and achievements — comes back.">پێشکەوتنەکەت خۆکارانە پاڵپشت دەکرێت. ئەگەر مۆبایل بگۆڕیت، تەنیا بە هەمان ڕێگە بچۆرەوە ژوورەوە و هەموو شتێک — وانەکان، خاڵەکان، زنجیرە و دەستکەوتەکان — دەگەڕێنەوە.</p>
         </div>
       </section>
 
@@ -234,8 +243,8 @@
                  data-en="Tap “Sign in”.">دەست بنێ بە «چوونەژوورەوە».</p></li>
           <li><p data-ku="هەمان ئەو ڕێگەیە هەڵبژێرە کە پێی هەژمارەکەت دروستکرد — گووگڵ، ئەپڵ، یان ئیمەیڵ."
                  data-en="Use the same method you signed up with — Google, Apple, or email.">هەمان ئەو ڕێگەیە هەڵبژێرە کە پێی هەژمارەکەت دروستکرد — گووگڵ، ئەپڵ، یان ئیمەیڵ.</p></li>
-          <li><p data-ku="پێشکەوتن، خاڵ و ستریکەکەت خۆکارانە دەگەڕێنەوە."
-                 data-en="Your progress, XP, and streak come back automatically.">پێشکەوتن، خاڵ و ستریکەکەت خۆکارانە دەگەڕێنەوە.</p></li>
+          <li><p data-ku="پێشکەوتن، خاڵ و زنجیرەکەت خۆکارانە دەگەڕێنەوە."
+                 data-en="Your progress, XP, and streak come back automatically.">پێشکەوتن، خاڵ و زنجیرەکەت خۆکارانە دەگەڕێنەوە.</p></li>
         </ol>
 
         <div class="callout warn">
@@ -362,8 +371,8 @@
 
         <div class="callout warn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p data-ku="سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، ستریک و دەستکەوتەکانت لەدەست دەچن."
-             data-en="Deletion is permanent and cannot be undone. All your progress, XP, streaks, and achievements will be lost.">سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، ستریک و دەستکەوتەکانت لەدەست دەچن.</p>
+          <p data-ku="سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، زنجیرە و دەستکەوتەکانت لەدەست دەچن."
+             data-en="Deletion is permanent and cannot be undone. All your progress, XP, streaks, and achievements will be lost.">سڕینەوە هەمیشەییە و ناگەڕێتەوە. هەموو پێشکەوتن، خاڵ، زنجیرە و دەستکەوتەکانت لەدەست دەچن.</p>
         </div>
 
         <p style="margin-top: 18px;">
@@ -474,9 +483,9 @@
           </details>
 
           <details>
-            <summary data-ku="ستریکەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟" data-en="I lost my streak, can it be restored?">ستریکەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟</summary>
-            <p data-ku="ستریک کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە."
-               data-en="Your streak is kept by completing at least one lesson every day. If you think something went wrong, email us.">ستریک کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە.</p>
+            <summary data-ku="زنجیرەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟" data-en="I lost my streak, can it be restored?">زنجیرەکەم پچڕا، دەکرێت بگەڕێنرێتەوە؟</summary>
+            <p data-ku="زنجیرە کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە."
+               data-en="Your streak is kept by completing at least one lesson every day. If you think something went wrong, email us.">زنجیرە کاتێک دەپارێزرێت کە هەموو ڕۆژێک بەلایەنی کەم یەک وانە تەواو بکەیت. ئەگەر پێتوایە هەڵەیەک ڕوویداوە، ئیمەیڵمان بۆ بنێرە.</p>
           </details>
         </div>
 
@@ -500,14 +509,21 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span data-ku="زمان" data-en="ZMAN">زمان</span>
-          <span class="brand-latin" aria-hidden="true">ZMAN</span>
+          <picture class="logo-ku">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+            <img src="assets/brand/lockup-kurdish-light.svg" width="98" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="زمان">
+          </picture>
+          <picture class="logo-en">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+            <img src="assets/brand/lockup-latin-light.svg" width="110" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="ZMAN">
+          </picture>
         </div>
         <nav class="footer-nav" data-aria-ku="بەستەرەکانی خوارەوە" data-aria-en="Footer links" aria-label="بەستەرەکانی خوارەوە">
           <a href="index.html" data-ku="پەڕەی سەرەکی" data-en="Home">پەڕەی سەرەکی</a>
           <a href="guide.html" data-ku="ڕێنمایی" data-en="Guide">ڕێنمایی</a>
           <a href="privacy.html" data-ku="سیاسەتی تایبەتمەندی" data-en="Privacy Policy">سیاسەتی تایبەتمەندی</a>
           <a href="terms.html" data-ku="مەرجەکانی بەکارهێنان" data-en="Terms of Service">مەرجەکانی بەکارهێنان</a>
+          <a href="delete-account.html" data-ku="سڕینەوەی هەژمار" data-en="Delete account">سڕینەوەی هەژمار</a>
         </nav>
       </div>
       <div class="footer-meta">

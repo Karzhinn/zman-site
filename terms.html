@@ -17,9 +17,12 @@
   <meta name="description" content="مەرجەکانی بەکارهێنانی ئەپی زمان — فێربوونی ئینگلیزی بۆ قسەکەرانی کوردیی سۆرانی.">
   <meta name="robots" content="index,follow">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body
@@ -36,8 +39,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" data-aria-ku="زمان — پەڕەی سەرەکی" data-aria-en="ZMAN — home" aria-label="زمان — پەڕەی سەرەکی">
-        <img src="assets/logo-mark.png" alt="" width="60" height="30">
-        <span class="brand-latin" aria-hidden="true">ZMAN</span>
+        <picture class="logo-ku">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+          <img src="assets/brand/lockup-kurdish-light.svg" alt="" width="111" height="34">
+        </picture>
+        <picture class="logo-en">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+          <img src="assets/brand/lockup-latin-light.svg" alt="" width="125" height="34">
+        </picture>
       </a>
       <div class="header-actions">
         <button class="lang-toggle" type="button" data-aria-ku="گۆڕینی زمان بۆ ئینگلیزی" data-aria-en="Switch language to Kurdish" aria-label="گۆڕینی زمان بۆ ئینگلیزی">
@@ -192,14 +201,21 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span data-ku="زمان" data-en="ZMAN">زمان</span>
-          <span class="brand-latin" aria-hidden="true">ZMAN</span>
+          <picture class="logo-ku">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+            <img src="assets/brand/lockup-kurdish-light.svg" width="98" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="زمان">
+          </picture>
+          <picture class="logo-en">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+            <img src="assets/brand/lockup-latin-light.svg" width="110" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="ZMAN">
+          </picture>
         </div>
         <nav class="footer-nav" data-aria-ku="بەستەرەکانی خوارەوە" data-aria-en="Footer links" aria-label="بەستەرەکانی خوارەوە">
           <a href="index.html" data-ku="پەڕەی سەرەکی" data-en="Home">پەڕەی سەرەکی</a>
           <a href="guide.html" data-ku="ڕێنمایی" data-en="Guide">ڕێنمایی</a>
           <a href="privacy.html" data-ku="سیاسەتی تایبەتمەندی" data-en="Privacy Policy">سیاسەتی تایبەتمەندی</a>
           <a href="terms.html" data-ku="مەرجەکانی بەکارهێنان" data-en="Terms of Service">مەرجەکانی بەکارهێنان</a>
+          <a href="delete-account.html" data-ku="سڕینەوەی هەژمار" data-en="Delete account">سڕینەوەی هەژمار</a>
         </nav>
       </div>
       <div class="footer-meta">

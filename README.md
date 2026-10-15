@@ -65,7 +65,7 @@ Two behaviours to know:
 
 1. **Store links** — the **App Store** button is live (iOS launched). **Google Play** is still a `<span class="store-btn is-coming-soon">` placeholder (hero + download section) — swap it for a real `<a class="store-btn" href="…">` link and delete its `soon-pill` when the Android app ships.
 2. **Direct APK / beta link** — a commented-out button sits in the download section.
-3. **Real screenshots** — replace the SVGs in `assets/screenshots/` (see `assets/README.md`).
+3. **Screenshots** — real v2 app screens live in `assets/shots/`; refresh them from the app's store screenshots (see `assets/README.md`).
 4. **Phone mockup & favicon & store badges** — see `assets/README.md`.
 5. **Final legal text** — replace the DRAFT placeholders in `privacy.html` and `terms.html`, then remove the draft banner and the `draft-chip` spans.
 6. **Guide wording vs. the real app** — `guide.html` has a `TODO` at the top: once the app UI is final, make the button/screen names in the steps match word-for-word what users actually see.

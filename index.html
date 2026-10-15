@@ -13,9 +13,11 @@
       } catch (e) {}
     })();
   </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>زمان — فێربوونی ئینگلیزی بۆ قسەکەرانی کوردی</title>
   <meta name="description" content="زمان ئەپێکی بەخۆڕایی و یارییئاسایە بۆ فێربوونی ئینگلیزی، تایبەت بە قسەکەرانی کوردیی سۆرانی. ١٠٠ بەش، ٣١٠ وانە، ١٣١٠ ڕاهێنان — بەبێ ئینتەرنێتیش کاردەکات.">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Social preview (og: URLs must be absolute).
        TODO: if you later use a custom domain, update these URLs. -->
@@ -23,12 +25,14 @@
   <meta property="og:title" content="ZMAN — Learn English, made for Kurdish speakers">
   <meta property="og:description" content="A free, game-like app that teaches English to Sorani Kurdish speakers. 100 chapters, 310 lessons, 1310 exercises — works offline.">
   <meta property="og:url" content="https://karzhinn.github.io/zman-site/">
-  <meta property="og:image" content="https://karzhinn.github.io/zman-site/assets/logo-og.png">
+  <meta property="og:image" content="https://karzhinn.github.io/zman-site/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body
@@ -46,8 +50,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" data-aria-ku="زمان — پەڕەی سەرەکی" data-aria-en="ZMAN — home" aria-label="زمان — پەڕەی سەرەکی">
-        <img src="assets/logo-mark.png" alt="" width="60" height="30">
-        <span class="brand-latin" aria-hidden="true">ZMAN</span>
+        <picture class="logo-ku">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+          <img src="assets/brand/lockup-kurdish-light.svg" alt="" width="111" height="34">
+        </picture>
+        <picture class="logo-en">
+          <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+          <img src="assets/brand/lockup-latin-light.svg" alt="" width="125" height="34">
+        </picture>
       </a>
 
       <nav id="site-nav" class="site-nav" data-aria-ku="ڕێدۆزی سەرەکی" data-aria-en="Main navigation" aria-label="ڕێدۆزی سەرەکی">
@@ -65,7 +75,7 @@
           <span class="lang-toggle-label">English</span>
         </button>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-aria-ku="کردنەوەی مێنیو" data-aria-en="Open menu" aria-label="کردنەوەی مێنیو">
-          <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
           <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
@@ -74,71 +84,75 @@
 
   <main id="main">
 
-    <!-- ============================ HERO ============================ -->
+    <!-- ============================ HERO (the Ink "continue card") ============================ -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <span class="hero-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span data-ku="بەخۆڕایی • ئەندرۆید و iOS" data-en="Free • Android &amp; iOS">بەخۆڕایی • ئەندرۆید و iOS</span>
-          </span>
-
-          <div class="hero-logo-tile">
-            <img src="assets/logo-mark.png" width="74" height="37"
-                 data-alt-ku="لۆگۆی زمان" data-alt-en="ZMAN logo" alt="لۆگۆی زمان">
-          </div>
-
-          <h1 data-ku="فێری ئینگلیزی ببە، بە زمانی خۆت"
-              data-en="Learn English, made for Kurdish speakers">فێری ئینگلیزی ببە، بە زمانی خۆت</h1>
-
-          <p class="hero-sub"
-             data-ku="زمان ئەپێکی بەخۆڕایی و یارییئاسایە بۆ فێربوونی ئینگلیزی، تایبەت بە قسەکەرانی کوردیی سۆرانی — وانەی کورت، ڕوونکردنەوە بە کوردی، و هەموو ڕۆژێک هەنگاوێکی بچووک."
-             data-en="ZMAN is a free, game-like app that teaches English to Sorani Kurdish speakers — short lessons, explanations in Kurdish, and one small step every day.">زمان ئەپێکی بەخۆڕایی و یارییئاسایە بۆ فێربوونی ئینگلیزی، تایبەت بە قسەکەرانی کوردیی سۆرانی — وانەی کورت، ڕوونکردنەوە بە کوردی، و هەموو ڕۆژێک هەنگاوێکی بچووک.</p>
-
-          <div class="hero-stats" role="list">
-            <div class="hero-stat" role="listitem">
-              <strong data-ku="١٠٠" data-en="100">١٠٠</strong>
-              <span data-ku="بەش" data-en="chapters">بەش</span>
-            </div>
-            <div class="hero-stat" role="listitem">
-              <strong data-ku="٣١٠" data-en="310">٣١٠</strong>
-              <span data-ku="وانە" data-en="lessons">وانە</span>
-            </div>
-            <div class="hero-stat" role="listitem">
-              <strong data-ku="١٣١٠" data-en="1310">١٣١٠</strong>
-              <span data-ku="ڕاهێنان" data-en="exercises">ڕاهێنان</span>
-            </div>
-          </div>
-
-          <!-- Store buttons (coming-soon state; real links are pasted in the Download section AND here).
-               TODO: when the app is live, replace each <span class="store-btn …"> with:
-               <a class="store-btn" href="PASTE_GOOGLE_PLAY_URL_HERE"> / <a class="store-btn" href="PASTE_APP_STORE_URL_HERE"> -->
-          <div class="store-buttons">
-            <span class="store-btn is-coming-soon" role="img" data-aria-ku="گووگڵ پلەی — بەم زووانە" data-aria-en="Google Play — coming soon" aria-label="گووگڵ پلەی — بەم زووانە">
-              <svg width="26" height="26" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-              <span class="store-btn-text">
-                <small data-ku="بەم زووانە لە" data-en="Coming soon on">بەم زووانە لە</small>
-                <strong>Google Play</strong>
-              </span>
-              <span class="soon-pill" data-ku="بەم زووانە" data-en="Soon">بەم زووانە</span>
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="hero-badge">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-ku="بەخۆڕایی · ئێستا لەسەر ئایفۆن" data-en="Free · Now on iPhone">بەخۆڕایی · ئێستا لەسەر ئایفۆن</span>
             </span>
-            <a class="store-btn" href="https://apps.apple.com/iq/app/zman-%D8%B2%D9%85%D8%A7%D9%86/id6793901317" data-aria-ku="داگرتنی زمان لە ئاپ ستۆر" data-aria-en="Download ZMAN on the App Store" aria-label="داگرتنی زمان لە ئاپ ستۆر">
-              <svg width="26" height="26" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-              <span class="store-btn-text">
-                <small data-ku="دایبگرە لە" data-en="Download on the">دایبگرە لە</small>
-                <strong>App Store</strong>
-              </span>
-            </a>
-          </div>
-          <p class="hero-note"
-             data-ku="ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە — ئەندرۆید بەم زووانە."
-             data-en="Available now for iPhone on the App Store — Android coming soon.">ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە — ئەندرۆید بەم زووانە.</p>
-        </div>
 
-        <img class="hero-phone" src="assets/phone-mockup.png" width="340" height="674" fetchpriority="high"
-             data-alt-ku="ئەپی زمان لەسەر مۆبایل، پەڕەی سەرەکی لەگەڵ ئەرکی ڕۆژانە و لیستی وانەکان"
-             data-alt-en="The ZMAN app on a phone, showing the home screen with daily quests and the lesson list"
-             alt="ئەپی زمان لەسەر مۆبایل، پەڕەی سەرەکی لەگەڵ ئەرکی ڕۆژانە و لیستی وانەکان">
+            <h1 data-ku="فێری ئینگلیزی ببە، بە زمانی خۆت"
+                data-en="Learn English, made for Kurdish speakers">فێری ئینگلیزی ببە، بە زمانی خۆت</h1>
+
+            <p class="hero-sub"
+               data-ku="زمان ئەپێکی بەخۆڕایی و یارییئاسایە بۆ فێربوونی ئینگلیزی، تایبەت بە قسەکەرانی کوردیی سۆرانی — وانەی کورت، ڕوونکردنەوە بە کوردی، و هەموو ڕۆژێک هەنگاوێکی بچووک."
+               data-en="ZMAN is a free, game-like app that teaches English to Sorani Kurdish speakers — short lessons, explanations in Kurdish, and one small step every day.">زمان ئەپێکی بەخۆڕایی و یارییئاسایە بۆ فێربوونی ئینگلیزی، تایبەت بە قسەکەرانی کوردیی سۆرانی — وانەی کورت، ڕوونکردنەوە بە کوردی، و هەموو ڕۆژێک هەنگاوێکی بچووک.</p>
+
+            <div class="hero-stats" role="list">
+              <div class="hero-stat" role="listitem">
+                <strong data-ku="١٠٠" data-en="100">١٠٠</strong>
+                <span data-ku="بەش" data-en="chapters">بەش</span>
+              </div>
+              <div class="hero-stat" role="listitem">
+                <strong data-ku="٣١٠" data-en="310">٣١٠</strong>
+                <span data-ku="وانە" data-en="lessons">وانە</span>
+              </div>
+              <div class="hero-stat" role="listitem">
+                <strong data-ku="١٣١٠" data-en="1310">١٣١٠</strong>
+                <span data-ku="ڕاهێنان" data-en="exercises">ڕاهێنان</span>
+              </div>
+            </div>
+
+            <!-- Store buttons. TODO: when the Android app is live, turn the Google Play <span>
+                 into <a class="store-btn" href="PASTE_GOOGLE_PLAY_URL_HERE"> and delete its soon-pill
+                 (here AND in the Download section below). -->
+            <div class="store-buttons">
+              <a class="store-btn" href="https://apps.apple.com/iq/app/zman-%D8%B2%D9%85%D8%A7%D9%86/id6793901317" data-aria-ku="داگرتنی زمان لە ئاپ ستۆر" data-aria-en="Download ZMAN on the App Store" aria-label="داگرتنی زمان لە ئاپ ستۆر">
+                <svg width="24" height="24" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="store-btn-text">
+                  <small data-ku="دایبگرە لە" data-en="Download on the">دایبگرە لە</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
+              <span class="store-btn is-coming-soon" role="img" data-aria-ku="گووگڵ پلەی — بەم زووانە" data-aria-en="Google Play — coming soon" aria-label="گووگڵ پلەی — بەم زووانە">
+                <svg width="22" height="22" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                <span class="store-btn-text">
+                  <small data-ku="بەم زووانە لە" data-en="Coming soon on">بەم زووانە لە</small>
+                  <strong>Google Play</strong>
+                </span>
+                <span class="soon-pill" data-ku="بەم زووانە" data-en="Soon">بەم زووانە</span>
+              </span>
+            </div>
+            <p class="hero-note"
+               data-ku="ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە — ئەندرۆید بەم زووانە."
+               data-en="Available now for iPhone on the App Store — Android coming soon.">ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە — ئەندرۆید بەم زووانە.</p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="device">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="assets/shots/home-dark.jpg">
+                <img src="assets/shots/home.jpg" width="640" height="1387" fetchpriority="high"
+                     data-alt-ku="پەڕەی سەرەکی ئەپی زمان: کارتی بەردەوامبوون، ئەرکە ڕۆژانەکان و لیستی بەشەکان"
+                     data-alt-en="The ZMAN home screen: the continue card, daily quests and the chapter list"
+                     alt="پەڕەی سەرەکی ئەپی زمان: کارتی بەردەوامبوون، ئەرکە ڕۆژانەکان و لیستی بەشەکان">
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -153,35 +167,56 @@
         </div>
 
         <div class="about-grid">
-          <article class="about-card reveal">
-            <span class="about-num" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </span>
-            <p data-ku="ئامانجی ئێمە سادەیە: فێربوونی ئینگلیزی بۆ قسەکەرانی کوردیی سۆرانی، ڕۆژانە و ئاسان."
-               data-en="Our mission is simple: make learning English fun, daily, and approachable for Sorani Kurdish speakers — with explanations and tips in their own language, not in another foreign one.">ئامانجی ئێمە سادەیە: فێربوونی ئینگلیزی بۆ قسەکەرانی کوردیی سۆرانی خۆش، ڕۆژانە و ئاسان بکەین — بە ڕوونکردنەوە و ئامۆژگاری بە زمانی خۆیان، نەک بە زمانێکی بێگانە.</p>
-          </article>
+          <!-- The brand idea (see the brand guidelines, "one dot makes the name").
+               NOTE: new Kurdish copy — awaiting the owner's proofread. -->
+          <div class="about-quote reveal">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="assets/brand/mark-dark.svg">
+              <img class="about-mark" src="assets/brand/mark-light.svg" width="56" height="58" alt="">
+            </picture>
+            <p class="about-lead"
+               data-ku="خاڵەکەی سەر «ز» لابەرە، دەبێتە «ر». لە زماندا هەر وانەیەک خاڵێکە — هەنگاوێکی بچووک، هەموو ڕۆژێک."
+               data-en="Take the dot off «ز» and it becomes «ر». In ZMAN, a dot is a «خاڵ» — the same word as a point. Every lesson earns one: a small step, every day.">خاڵەکەی سەر «ز» لابەرە، دەبێتە «ر». لە زماندا هەر وانەیەک خاڵێکە — هەنگاوێکی بچووک، هەموو ڕۆژێک.</p>
+          </div>
 
-          <article class="about-card reveal">
-            <span class="about-num" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            </span>
-            <p data-ku="وانەی کورت و ئاسان: قسەکردن، گوێگرتن، نووسین، جووتکردن و هەڵبژاردن لەگەڵ ئامۆژگاریی کوردی کە دەستنیشانی ڕێک ئەو هەڵانە دەکات کە قسەکەرانی سۆرانی زۆرتر دەیانکەن."
-               data-en="Lessons are short and game-like: speaking, listening, writing, matching, and multiple choice — plus Kurdish teaching tips that target the exact mistakes Sorani speakers make most.">وانەکان کورت و یارییئاسان: قسەکردن، گوێگرتن، نووسین، جووتکردن و هەڵبژاردن — لەگەڵ ئامۆژگاریی کوردی کە دەستنیشانی ڕێک ئەو هەڵانە دەکات کە قسەکەرانی سۆرانی زۆرتر دەیانکەن.</p>
-          </article>
-
-          <article class="about-card reveal">
-            <span class="about-num" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </span>
-            <p data-ku="زمان سەرچاوەیەکی فێربوونی دۆستانەیە لە دەنگەکانی ئینگلیزییەوە تا گفتوگۆی ڕاستەقینە. بەبێ ئینتەرنێت کاردەکات و بۆ دەستپێکردن پێویستت بە هەژمار نییە؛ هەژمارێکی بەخۆڕایی (ئیمەیڵ، گووگڵ یان ئەپڵ) پێشکەوتنەکەت دەپارێزێت، لەنێوان ئامێرەکان هاوکاتی دەکات و پێشبڕکێی هەفتانە دەکاتەوە."
-               data-en="ZMAN is a friendly, habit-building learning resource — from English sounds all the way to real conversations. It works offline and you don’t need an account to start; a free account (email, Google, or Apple) keeps your progress safe, syncs it across devices, and unlocks the weekly leaderboards.">زمان سەرچاوەیەکی فێربوونی دۆستانەیە — لە دەنگەکانی ئینگلیزییەوە تا گفتوگۆی ڕاستەقینە. بەبێ ئینتەرنێت کاردەکات و بۆ دەستپێکردن پێویستت بە هەژمار نییە؛ هەژمارێکی بەخۆڕایی (ئیمەیڵ، گووگڵ یان ئەپڵ) پێشکەوتنەکەت دەپارێزێت، لەنێوان ئامێرەکان هاوکاتی دەکات و پێشبڕکێی هەفتانە دەکاتەوە.</p>
-          </article>
+          <div class="group reveal">
+            <div class="group-row">
+              <span class="tile tile-ink" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </span>
+              <div>
+                <h3 data-ku="بە زمانی خۆت" data-en="In your own language">بە زمانی خۆت</h3>
+                <p data-ku="ئامانجی ئێمە سادەیە: فێربوونی ئینگلیزی بۆ کوردزمانان خۆش، ڕۆژانە و ئاسان بکەین — بە ڕوونکردنەوە و ئامۆژگاری بە زمانی خۆیان، نەک بە زمانێکی بێگانە."
+                   data-en="Our mission is simple: make learning English fun, daily, and approachable for Kurdish speakers — with explanations and tips in their own language, not in another foreign one.">ئامانجی ئێمە سادەیە: فێربوونی ئینگلیزی بۆ کوردزمانان خۆش، ڕۆژانە و ئاسان بکەین — بە ڕوونکردنەوە و ئامۆژگاری بە زمانی خۆیان، نەک بە زمانێکی بێگانە.</p>
+              </div>
+            </div>
+            <div class="group-row">
+              <span class="tile tile-teal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </span>
+              <div>
+                <h3 data-ku="وانەی کورت و یارییئاسا" data-en="Short, game-like lessons">وانەی کورت و یارییئاسا</h3>
+                <p data-ku="قسەکردن، گوێگرتن، نووسین، جووتکردن و هەڵبژاردن — لەگەڵ ئامۆژگاریی کوردی کە ڕێک ئەو هەڵانە دەستنیشان دەکات کە کوردزمانان زۆرتر دەیانکەن."
+                   data-en="Speaking, listening, writing, matching, and multiple choice — plus Kurdish teaching tips that target the exact mistakes Kurdish speakers make most.">قسەکردن، گوێگرتن، نووسین، جووتکردن و هەڵبژاردن — لەگەڵ ئامۆژگاریی کوردی کە ڕێک ئەو هەڵانە دەستنیشان دەکات کە کوردزمانان زۆرتر دەیانکەن.</p>
+              </div>
+            </div>
+            <div class="group-row">
+              <span class="tile tile-green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </span>
+              <div>
+                <h3 data-ku="لە دەنگەوە تا گفتوگۆ" data-en="From sounds to conversation">لە دەنگەوە تا گفتوگۆ</h3>
+                <p data-ku="لە دەنگەکانی ئینگلیزییەوە تا گفتوگۆی ڕاستەقینە. بەبێ ئینتەرنێت کاردەکات و بۆ دەستپێکردن پێویستت بە هەژمار نییە؛ هەژمارێکی بەخۆڕایی (ئیمەیڵ، گووگڵ یان ئەپڵ) پێشکەوتنەکەت دەپارێزێت و پێشبڕکێی هەفتانە دەکاتەوە."
+                   data-en="From English sounds all the way to real conversations. It works offline and you don’t need an account to start; a free account (email, Google, or Apple) keeps your progress safe and unlocks the weekly leaderboards.">لە دەنگەکانی ئینگلیزییەوە تا گفتوگۆی ڕاستەقینە. بەبێ ئینتەرنێت کاردەکات و بۆ دەستپێکردن پێویستت بە هەژمار نییە؛ هەژمارێکی بەخۆڕایی (ئیمەیڵ، گووگڵ یان ئەپڵ) پێشکەوتنەکەت دەپارێزێت و پێشبڕکێی هەفتانە دەکاتەوە.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============================ FEATURES ============================ -->
-    <section class="section alt" id="features">
+    <section class="section" id="features">
       <div class="container">
         <div class="section-head reveal">
           <span class="kicker" data-ku="تایبەتمەندییەکان" data-en="Features">تایبەتمەندییەکان</span>
@@ -192,8 +227,8 @@
 
         <div class="features-grid">
           <article class="feature-card reveal">
-            <span class="feature-icon tint-indigo" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+            <span class="tile tile-blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
             </span>
             <h3 data-ku="١٠٠ بەش، ٣١٠ وانە" data-en="100 chapters, 310 lessons">١٠٠ بەش، ٣١٠ وانە</h3>
             <p data-ku="ڕێڕەوێکی ڕێکخراو لە دەنگە ئینگلیزییەکان و وشەی ڕۆژانەوە تا ڕێزمانی پێشکەوتوو و گفتوگۆی ڕاستەقینە."
@@ -201,8 +236,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-violet" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span class="tile tile-teal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </span>
             <h3 data-ku="قسەکردن و گوێگرتن" data-en="Speaking &amp; listening">قسەکردن و گوێگرتن</h3>
             <p data-ku="ڕاهێنانی قسەکردن بە ناسینەوەی دەنگ لەسەر مۆبایلەکەت، و گوێگرتن بە دەنگی ڕوون — هەروەها نووسین بە بانکی وشە."
@@ -210,17 +245,17 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-orange" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span class="tile tile-orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
             </span>
-            <h3 data-ku="خاڵ، ئاست، ستریک و دڵ" data-en="XP, levels, streaks &amp; hearts">خاڵ، ئاست، ستریک و دڵ</h3>
-            <p data-ku="خاڵ کۆبکەرەوە، لە ئاستی ١ بۆ ١٠٠ بەرزبەرەوە، دڵەکانت بپارێزە و ستریکی ڕۆژانەت مەپچڕێنە."
-               data-en="Earn XP («خاڵ»), climb levels 1–100, protect your hearts, and keep your daily streak alive.">خاڵ کۆبکەرەوە، لە ئاستی ١ بۆ ١٠٠ بەرزبەرەوە، دڵەکانت بپارێزە و ستریکی ڕۆژانەت مەپچڕێنە.</p>
+            <h3 data-ku="خاڵ، ئاست، زنجیرە و دڵ" data-en="XP, levels, streaks &amp; hearts">خاڵ، ئاست، زنجیرە و دڵ</h3>
+            <p data-ku="خاڵ کۆبکەرەوە، لە ئاستی ١ بۆ ١٠٠ بەرزبەرەوە، دڵەکانت بپارێزە و زنجیرەی ڕۆژانەت مەپچڕێنە."
+               data-en="Earn XP («خاڵ»), climb levels 1–100, protect your hearts, and keep your daily streak alive.">خاڵ کۆبکەرەوە، لە ئاستی ١ بۆ ١٠٠ بەرزبەرەوە، دڵەکانت بپارێزە و زنجیرەی ڕۆژانەت مەپچڕێنە.</p>
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-gold" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            <span class="tile tile-indigo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
             </span>
             <h3 data-ku="ئەرکی ڕۆژانە و دەستکەوت" data-en="Daily quests &amp; achievements">ئەرکی ڕۆژانە و دەستکەوت</h3>
             <p data-ku="هەموو ڕۆژێک ئەرکی نوێ تەواو بکە و بە درێژایی ڕێگاکەت دەستکەوتەکان کۆبکەرەوە."
@@ -228,8 +263,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-green" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span class="tile tile-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
             </span>
             <h3 data-ku="پێشبڕکێی هەفتانە" data-en="Weekly leaderboards">پێشبڕکێی هەفتانە</h3>
             <p data-ku="لەگەڵ هاوڕێکانت پێشبڕکێ بکە و هەموو هەفتەیەک شوێنی خۆت لە خشتەکەدا ببینە."
@@ -237,8 +272,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-indigo" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span class="tile tile-green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </span>
             <h3 data-ku="کتێبخانە" data-en="Reference Library">کتێبخانە</h3>
             <p data-ku="دەنگەکانی ئینگلیزی لەگەڵ دەنگ، و فەرهەنگۆکی دەستەواژەی دووزمانە — هەمیشە لەبەردەستدان."
@@ -246,8 +281,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-violet" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="tile tile-ink" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </span>
             <h3 data-ku="بە کوردی فێربە" data-en="Learn in Kurdish">بە کوردی فێربە</h3>
             <p data-ku="هەموو ڕوونکردنەوە و ئامۆژگارییەک بە کوردیی سۆرانییە — بۆ ئەوەی هیچ شتێک لێڵ نەمێنێت."
@@ -255,8 +290,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-green" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            <span class="tile tile-gray" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
             </span>
             <h3 data-ku="بەبێ ئینتەرنێت" data-en="Works offline">بەبێ ئینتەرنێت</h3>
             <p data-ku="وانەکان لەسەر مۆبایلەکەتن — لە هەر شوێنێک و هەر کاتێک فێربە، بەبێ ئینتەرنێت."
@@ -264,8 +299,8 @@
           </article>
 
           <article class="feature-card reveal">
-            <span class="feature-icon tint-red" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="tile tile-pink" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </span>
             <h3 data-ku="بە تەواوی بەخۆڕایی" data-en="Completely free">بە تەواوی بەخۆڕایی</h3>
             <p data-ku="دایبگرە، دەستپێبکە و فێربە — بەخۆڕایی."
@@ -276,76 +311,105 @@
     </section>
 
     <!-- ============================ SCREENSHOTS ============================ -->
+    <!-- Real v2 app screens (from ZMANX-main/store_assets/screenshots/appstore_1179x2556),
+         resized to 640 px wide JPEGs in assets/shots/. -->
     <section class="section" id="screenshots">
       <div class="container">
         <div class="section-head reveal">
           <span class="kicker" data-ku="وێنەکان" data-en="Screenshots">وێنەکان</span>
           <h2 data-ku="دیمەنی ناو ئەپ" data-en="Inside the app">دیمەنی ناو ئەپ</h2>
-          <p data-ku="چەند دیمەنێک لە ناو ئەپەکە — وانە، ڕاهێنان، دەستکەوت و پێشبڕکێ."
-             data-en="A few real screens from the app — lessons, exercises, achievements, and leaderboards.">چەند دیمەنێک لە ناو ئەپەکە — وانە، ڕاهێنان، دەستکەوت و پێشبڕکێ.</p>
+          <p data-ku="چەند دیمەنێک لە ناو ئەپەکە — وانە، پێشکەوتن، دەستکەوت و کتێبخانە."
+             data-en="Real screens from the app — lessons, progress, achievements, and the Library.">چەند دیمەنێک لە ناو ئەپەکە — وانە، پێشکەوتن، دەستکەوت و کتێبخانە.</p>
         </div>
 
         <div class="shots-row" tabindex="0" data-aria-ku="وێنەکانی ئەپ" data-aria-en="App screenshots" aria-label="وێنەکانی ئەپ">
-          <img src="assets/screenshots/lesson1.png" width="360" height="780" loading="lazy"
-               data-alt-ku="ڕاهێنانی نووسین بە بانکی وشە بۆ دروستکردنی ڕستەی «It is five o’clock»"
-               data-alt-en="A word-bank writing exercise building the sentence “It is five o’clock”"
-               alt="ڕاهێنانی نووسین بە بانکی وشە بۆ دروستکردنی ڕستەی «It is five o’clock»">
-          <img src="assets/screenshots/lesson3.png" width="360" height="780" loading="lazy"
-               data-alt-ku="ڕاهێنانی گوێگرتن و هەڵبژاردن، وەڵامی ڕاست بە سەوز دیارکراوە"
-               data-alt-en="A listening and multiple-choice exercise with the correct answer marked in green"
-               alt="ڕاهێنانی گوێگرتن و هەڵبژاردن، وەڵامی ڕاست بە سەوز دیارکراوە">
-          <img src="assets/screenshots/achievements.png" width="360" height="780" loading="lazy"
-               data-alt-ku="پەڕەی دەستکەوتەکان لەگەڵ ستریک، خاڵ و نیشانەکان"
-               data-alt-en="The achievements screen showing streaks, XP, and badges"
-               alt="پەڕەی دەستکەوتەکان لەگەڵ ستریک، خاڵ و نیشانەکان">
-          <img src="assets/screenshots/leaderboard.png" width="360" height="780" loading="lazy"
-               data-alt-ku="خشتەی پێشبڕکێی هەفتانە لەگەڵ سێپلەی یەکەم، دووەم و سێیەم"
-               data-alt-en="The weekly leaderboard with a first, second, and third place podium"
-               alt="خشتەی پێشبڕکێی هەفتانە لەگەڵ سێپلەی یەکەم، دووەم و سێیەم">
+          <figure>
+            <img src="assets/shots/welcome.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="پەڕەی بەخێرهاتن: لۆگۆی زمان، کورتەی تایبەتمەندییەکان و هەڵبژاردنی زمان"
+                 data-alt-en="The welcome screen: the ZMAN logo, a feature summary and the language picker"
+                 alt="پەڕەی بەخێرهاتن: لۆگۆی زمان، کورتەی تایبەتمەندییەکان و هەڵبژاردنی زمان">
+            <figcaption data-ku="بەخێرهاتن" data-en="Welcome">بەخێرهاتن</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/lesson.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="ڕاهێنانی گوێگرتن: دوگمەی دەنگ و سێ وەڵام بۆ هەڵبژاردن"
+                 data-alt-en="A listening exercise: the audio button and three answers to choose from"
+                 alt="ڕاهێنانی گوێگرتن: دوگمەی دەنگ و سێ وەڵام بۆ هەڵبژاردن">
+            <figcaption data-ku="گوێگرتن" data-en="Listening">گوێگرتن</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/correct.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="وەڵامی ڕاست بە سەوز دیارکراوە و ١٠ خاڵ بەدەستهاتووە"
+                 data-alt-en="A correct answer marked in green, earning 10 points"
+                 alt="وەڵامی ڕاست بە سەوز دیارکراوە و ١٠ خاڵ بەدەستهاتووە">
+            <figcaption data-ku="ڕاستە!" data-en="Correct!">ڕاستە!</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/progress.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="پەڕەی پێشکەوتن: ئاست، کۆی خاڵ، زنجیرە و خاڵی ئەم هەفتەیە"
+                 data-alt-en="The progress screen: level, total XP, streak and this week’s points"
+                 alt="پەڕەی پێشکەوتن: ئاست، کۆی خاڵ، زنجیرە و خاڵی ئەم هەفتەیە">
+            <figcaption data-ku="پێشکەوتن" data-en="Progress">پێشکەوتن</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/badges.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="چالاکیی ڕۆژانە و دەستکەوتەکان"
+                 data-alt-en="Daily activity and achievements"
+                 alt="چالاکیی ڕۆژانە و دەستکەوتەکان">
+            <figcaption data-ku="دەستکەوتەکان" data-en="Achievements">دەستکەوتەکان</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/library.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="کتێبخانە: کارتەکانی فۆنەتیک و بەشەکانی گفتوگۆ"
+                 data-alt-en="The Library: phonetics cards and conversation categories"
+                 alt="کتێبخانە: کارتەکانی فۆنەتیک و بەشەکانی گفتوگۆ">
+            <figcaption data-ku="کتێبخانە" data-en="Library">کتێبخانە</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/phrasebook.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="فەرهەنگۆکی دەستەواژە: ڕستەی ئینگلیزی لەگەڵ واتای کوردی و دەنگ"
+                 data-alt-en="The phrasebook: English phrases with Kurdish meanings and audio"
+                 alt="فەرهەنگۆکی دەستەواژە: ڕستەی ئینگلیزی لەگەڵ واتای کوردی و دەنگ">
+            <figcaption data-ku="گفتوگۆکان" data-en="Phrasebook">گفتوگۆکان</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shots/home-dark.jpg" width="640" height="1387" loading="lazy"
+                 data-alt-ku="پەڕەی سەرەکی لە دۆخی تاریکدا"
+                 data-alt-en="The home screen in dark mode"
+                 alt="پەڕەی سەرەکی لە دۆخی تاریکدا">
+            <figcaption data-ku="دۆخی تاریک" data-en="Dark mode">دۆخی تاریک</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- ============================ DOWNLOAD ============================ -->
-    <section class="section alt" id="download">
+    <section class="section" id="download">
       <div class="container">
         <div class="download-card reveal">
+          <img class="app-icon" src="assets/brand/app-icon.svg" width="88" height="88"
+               data-alt-ku="ئایکۆنی ئەپی زمان" data-alt-en="ZMAN app icon" alt="ئایکۆنی ئەپی زمان">
           <h2 data-ku="زمان دابەزێنە" data-en="Get ZMAN">زمان دابەزێنە</h2>
           <p data-ku="ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە. وەشانی ئەندرۆید بەم زووانە دێت — ئیمەیڵمان بۆ بنێرە تاوەکو ئاگادارت بکەینەوە."
              data-en="Available now for iPhone on the App Store. The Android version is coming soon — email us and we’ll let you know.">ئێستا بۆ ئایفۆن لەسەر ئاپ ستۆر بەردەستە. وەشانی ئەندرۆید بەم زووانە دێت — ئیمەیڵمان بۆ بنێرە تاوەکو ئاگادارت بکەینەوە.</p>
 
-          <!-- ======================================================================
-               TODO — REAL STORE LINKS GO HERE.
-               When ZMAN is published, replace each <span class="store-btn …"> below
-               with a real link and remove the "is-coming-soon" class + soon-pill:
-
-               <a class="store-btn" href="PASTE_GOOGLE_PLAY_URL_HERE">…</a>
-               <a class="store-btn" href="PASTE_APP_STORE_URL_HERE">…</a>
-
-               (Also update the matching pair of buttons in the hero section above.)
-               ====================================================================== -->
           <div class="store-buttons">
+            <a class="store-btn" href="https://apps.apple.com/iq/app/zman-%D8%B2%D9%85%D8%A7%D9%86/id6793901317" data-aria-ku="داگرتنی زمان لە ئاپ ستۆر" data-aria-en="Download ZMAN on the App Store" aria-label="داگرتنی زمان لە ئاپ ستۆر">
+              <svg width="24" height="24" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="store-btn-text">
+                <small data-ku="دایبگرە لە" data-en="Download on the">دایبگرە لە</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
             <span class="store-btn is-coming-soon" role="img" data-aria-ku="گووگڵ پلەی — بەم زووانە" data-aria-en="Google Play — coming soon" aria-label="گووگڵ پلەی — بەم زووانە">
-              <svg width="26" height="26" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
               <span class="store-btn-text">
                 <small data-ku="بەم زووانە لە" data-en="Coming soon on">بەم زووانە لە</small>
                 <strong>Google Play</strong>
               </span>
               <span class="soon-pill" data-ku="بەم زووانە" data-en="Soon">بەم زووانە</span>
             </span>
-            <a class="store-btn" href="https://apps.apple.com/iq/app/zman-%D8%B2%D9%85%D8%A7%D9%86/id6793901317" data-aria-ku="داگرتنی زمان لە ئاپ ستۆر" data-aria-en="Download ZMAN on the App Store" aria-label="داگرتنی زمان لە ئاپ ستۆر">
-              <svg width="26" height="26" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-              <span class="store-btn-text">
-                <small data-ku="دایبگرە لە" data-en="Download on the">دایبگرە لە</small>
-                <strong>App Store</strong>
-              </span>
-            </a>
           </div>
-
-          <!-- <a class="btn btn-notify" href="mailto:zmanapp@outlook.com?subject=ZMAN%20%E2%80%94%20Notify%20me">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span data-ku="ئاگادارم بکەرەوە" data-en="Get notified">ئاگادارم بکەرەوە</span>
-          </a> -->
 
           <!-- TODO: optional direct APK / beta link — uncomment and set the href when available:
           <a class="btn btn-ghost" href="PASTE_APK_OR_BETA_URL_HERE">
@@ -367,7 +431,9 @@
         <div class="contact-grid">
           <div class="contact-card reveal">
             <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span class="tile tile-blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
               <span data-ku="پشتگیری" data-en="Support">پشتگیری</span>
             </h3>
             <p data-ku="بۆ هەر پرسیار، کێشە یان پێشنیارێک، ئیمەیڵمان بۆ بنێرە — بە کوردی یان ئینگلیزی:"
@@ -379,14 +445,17 @@
             </p>
           </div>
 
-          <div class="contact-card deletion reveal">
+          <div class="contact-card reveal">
             <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span class="tile tile-gray" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
               <span data-ku="سڕینەوەی هەژمار و زانیارییەکان" data-en="Account &amp; data deletion">سڕینەوەی هەژمار و زانیارییەکان</span>
             </h3>
             <p data-ku="دەتوانیت هەژمارەکەت و هەموو زانیارییە پەیوەندیدارەکان لە ناو ئەپەکەوە بسڕیتەوە (ڕێکخستنەکان ← سڕینەوەی هەژمار)، یان ئیمەیڵ بنێرە بۆ ئەدرەسی خوارەوە تاوەکو داوای سڕینەوە بکەیت:"
                data-en="You can delete your account and all associated data inside the app (Settings → Delete account), or email the address below to request deletion:">دەتوانیت هەژمارەکەت و هەموو زانیارییە پەیوەندیدارەکان لە ناو ئەپەکەوە بسڕیتەوە (ڕێکخستنەکان ← سڕینەوەی هەژمار)، یان ئیمەیڵ بنێرە بۆ ئەدرەسی خوارەوە تاوەکو داوای سڕینەوە بکەیت:</p>
             <p><a class="email-link" href="mailto:zmanapp@outlook.com?subject=ZMAN%20%E2%80%94%20Account%20deletion%20request">zmanapp@outlook.com</a></p>
+            <p><a href="delete-account.html" data-ku="ڕێنمایی تەواوی سڕینەوە" data-en="Full deletion instructions">ڕێنمایی تەواوی سڕینەوە</a></p>
           </div>
         </div>
       </div>
@@ -398,13 +467,20 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span data-ku="زمان" data-en="ZMAN">زمان</span>
-          <span class="brand-latin" aria-hidden="true">ZMAN</span>
+          <picture class="logo-ku">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-kurdish-dark.svg">
+            <img src="assets/brand/lockup-kurdish-light.svg" width="98" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="زمان">
+          </picture>
+          <picture class="logo-en">
+            <source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-latin-dark.svg">
+            <img src="assets/brand/lockup-latin-light.svg" width="110" height="30" data-alt-ku="زمان" data-alt-en="ZMAN" alt="ZMAN">
+          </picture>
         </div>
         <nav class="footer-nav" data-aria-ku="بەستەرەکانی خوارەوە" data-aria-en="Footer links" aria-label="بەستەرەکانی خوارەوە">
           <a href="guide.html" data-ku="ڕێنمایی" data-en="Guide">ڕێنمایی</a>
           <a href="privacy.html" data-ku="سیاسەتی تایبەتمەندی" data-en="Privacy Policy">سیاسەتی تایبەتمەندی</a>
           <a href="terms.html" data-ku="مەرجەکانی بەکارهێنان" data-en="Terms of Service">مەرجەکانی بەکارهێنان</a>
+          <a href="delete-account.html" data-ku="سڕینەوەی هەژمار" data-en="Delete account">سڕینەوەی هەژمار</a>
           <a href="mailto:zmanapp@outlook.com" data-ku="پەیوەندی" data-en="Contact">پەیوەندی</a>
         </nav>
       </div>

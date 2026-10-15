@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>٤٠٤ — زمان</title>
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#17171F">
   <link rel="icon" type="image/svg+xml" href="/zman-site/assets/favicon.svg">
   <!-- GitHub Pages serves this file for ANY missing URL, so links must be absolute.
        TODO: if the repo is renamed or a custom domain is added, update "/zman-site/" below. -->
@@ -13,6 +14,7 @@
     setTimeout(function () { window.location.replace('/zman-site/'); }, 4000);
   </script>
   <style>
+    /* Brand v2: Ink ground, Sun as the single accent. Self-contained on purpose. */
     body {
       margin: 0;
       min-height: 100vh;
@@ -20,28 +22,33 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(140deg, #4338CA, #7C3AED);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      background: #17171F radial-gradient(circle at 50% 0%, rgba(255, 184, 28, 0.16), rgba(255, 184, 28, 0) 55%);
       color: #fff;
       padding: 24px;
     }
-    .box h1 { font-size: 4rem; margin: 0 0 8px; }
-    .box p { font-size: 1.1rem; margin: 0 0 24px; opacity: 0.9; }
+    .box img { width: 88px; height: 88px; margin: 0 auto 24px; display: block; }
+    .box h1 { font-size: 3.5rem; margin: 0 0 6px; font-weight: 700; }
+    .box p { font-size: 1.1rem; margin: 0 0 28px; color: #9B9BA3; line-height: 1.7; }
     .box a {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 14px;
-      background: #fff;
-      color: #4338CA;
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #FFB81C;
+      color: #1A1300;
+      font-weight: 600;
       text-decoration: none;
     }
+    .box a:focus-visible { outline: 2.5px solid #fff; outline-offset: 3px; }
   </style>
 </head>
 <body>
   <div class="box">
+    <img src="/zman-site/assets/brand/app-icon.svg" alt="" width="88" height="88">
     <h1>٤٠٤</h1>
-    <p>ئەم پەڕەیە نەدۆزرایەوە — This page was not found.</p>
+    <p>ئەم پەڕەیە نەدۆزرایەوە<br>This page was not found.</p>
     <a href="/zman-site/">گەڕانەوە بۆ پەڕەی سەرەکی · Back to home</a>
   </div>
 </body>
