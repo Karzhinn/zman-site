@@ -90,6 +90,15 @@
   // --- Scroll reveal (skipped when the user prefers reduced motion) ---
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealNodes = document.querySelectorAll('.reveal');
+  // Siblings that reveal together cascade (feature cards, screenshots) via --i
+  revealNodes.forEach(function (n) {
+    var sibs = n.parentNode ? n.parentNode.children : [];
+    var idx = 0;
+    for (var s = 0; s < sibs.length && sibs[s] !== n; s++) {
+      if (sibs[s].classList.contains('reveal')) idx++;
+    }
+    if (idx > 0) n.style.setProperty('--i', Math.min(idx, 4));
+  });
   if (!reduced && 'IntersectionObserver' in window && revealNodes.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -102,6 +111,50 @@
     revealNodes.forEach(function (n) { io.observe(n); });
   } else {
     revealNodes.forEach(function (n) { n.classList.add('is-visible'); });
+  }
+
+  // --- Hero stats count up once, in the page's digits ---
+  var counters = document.querySelectorAll('[data-count]');
+  function toKuDigits(n) {
+    return String(n).replace(/\d/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.charAt(+d); });
+  }
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var start = null;
+    var duration = 1200;
+    function frame(now) {
+      if (start === null) start = now;
+      var p = Math.min((now - start) / duration, 1);
+      var value = Math.round(target * (1 - Math.pow(1 - p, 3))); // ease-out cubic
+      if (p < 1) {
+        el.textContent = currentLang === 'ku' ? toKuDigits(value) : String(value);
+        requestAnimationFrame(frame);
+      } else {
+        // Land on the authored string so the language toggle keeps working
+        el.textContent = el.getAttribute(currentLang === 'ku' ? 'data-ku' : 'data-en');
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  if (!reduced && counters.length && window.requestAnimationFrame) {
+    counters.forEach(function (el) { el.textContent = currentLang === 'ku' ? '٠' : '0'; });
+    setTimeout(function () { counters.forEach(countUp); }, 350); // in step with the hero entrance
+  }
+
+  // --- Hero phone settles into its card as you scroll (cheap, rAF-throttled) ---
+  var device = document.querySelector('.hero-visual .device');
+  if (!reduced && device && window.requestAnimationFrame) {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var y = window.scrollY || window.pageYOffset || 0;
+        if (y > 1000) return; // hero is long gone — stop updating
+        device.style.setProperty('--py', Math.min(y * 0.15, 70).toFixed(1) + 'px');
+      });
+    }, { passive: true });
   }
 
   // --- Site alert / status bar (content lives in content/alerts.json, edited via /admin/) ---

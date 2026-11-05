@@ -63,7 +63,7 @@ Two behaviours to know:
 
 ## Things left to fill in (search the code for `TODO`)
 
-1. **Store links** — the **App Store** button is live (iOS launched). **Google Play** is still a `<span class="store-btn is-coming-soon">` placeholder (hero + download section) — swap it for a real `<a class="store-btn" href="…">` link and delete its `soon-pill` when the Android app ships.
+1. **Store links** — both apps are live: App Store `https://apps.apple.com/iq/app/zman-%D8%B2%D9%85%D8%A7%D9%86/id6793901317`, Google Play `https://play.google.com/store/apps/details?id=com.kajo.zman`. They appear in `index.html` in the hero and the Download (store listings) section, as the OFFICIAL badges (`assets/brand/badge-*`) — Apple and Google require their own artwork. If a URL ever changes, update both spots and regenerate the QR codes (see `assets/README.md`).
 2. **Direct APK / beta link** — a commented-out button sits in the download section.
 3. **Screenshots** — real v2 app screens live in `assets/shots/`; refresh them from the app's store screenshots (see `assets/README.md`).
 4. **Phone mockup & favicon & store badges** — see `assets/README.md`.
