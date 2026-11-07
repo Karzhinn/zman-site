@@ -2,7 +2,7 @@
   "alerts": [
     {
       "id": "android-launch",
-      "active": false,
+      "active": true,
       "severity": "success",
       "dismissible": true,
       "message_ku": "ئاپی زمان ئیستا لە هەردوو پلاتفۆڕم ئەپڵ و ئاندرۆید بەردەستە! چاوەڕێی ئەبدەیت بن!",
